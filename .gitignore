@@ -1,3 +1,9 @@
+.gitignore
+__pycache__
+*.xml
+*.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
