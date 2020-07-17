@@ -34,11 +34,6 @@ def parseEngine(fpath):
             all_words = all_words.replace("\n","") + '\r\n'
         else:
             print (word+'\n')
-        
-    #        all_words +=  str(item.find('word').text) + ' ' + str(item.find('phonetic').text) + ' ^ '  \
-    #                    + str(item.find('trans').text) + ' ^ ' \
-    #                    + str(item.find('tags').text)                   
-    #        all_words = all_words.replace("\n","") + '\r\n'
                    
     # Do NOT give extention file name as .xml, otherwise Anki fails to import
     with open(curDir+"/"+fname+'_extracted.txt', 'w', encoding='utf8') as f:
