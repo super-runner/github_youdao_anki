@@ -28,9 +28,11 @@ def parseEngine(fpath):
 
     all_words = str()
     for item in items:
-        all_words +=  str(item.find('word').text) + ' ' + str(item.find('phonetic').text) + ' ^ '  \
-                    + str(item.find('trans').text) + ' ^ ' \
-                    + str(item.find('tags').text)
+        all_words +=  str(item.find('word').text) + ' ; '  + str(item.find('tags').text)
+
+#        all_words +=  str(item.find('word').text) + ' ' + str(item.find('phonetic').text) + ' ^ '  \
+#                    + str(item.find('trans').text) + ' ^ ' \
+#                    + str(item.find('tags').text)
                     
         all_words = all_words.replace("\n","") + '\r\n'
                    

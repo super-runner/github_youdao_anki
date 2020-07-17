@@ -3,6 +3,7 @@ __pycache__
 *.xml
 *.txt
 *.ico
+*.bk
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
