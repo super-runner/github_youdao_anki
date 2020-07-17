@@ -28,13 +28,17 @@ def parseEngine(fpath):
 
     all_words = str()
     for item in items:
-        all_words +=  str(item.find('word').text) + ' ; '  + str(item.find('tags').text)
-
-#        all_words +=  str(item.find('word').text) + ' ' + str(item.find('phonetic').text) + ' ^ '  \
-#                    + str(item.find('trans').text) + ' ^ ' \
-#                    + str(item.find('tags').text)
-                    
-        all_words = all_words.replace("\n","") + '\r\n'
+        word = str(item.find('word').text)
+        if (word[0]>='a' and word[0]<='z') or (word[0]>='A' and word[0]<='Z'):
+            all_words +=  word + ' ; '  + str(item.find('tags').text)
+            all_words = all_words.replace("\n","") + '\r\n'
+        else:
+            print (word+'\n')
+        
+    #        all_words +=  str(item.find('word').text) + ' ' + str(item.find('phonetic').text) + ' ^ '  \
+    #                    + str(item.find('trans').text) + ' ^ ' \
+    #                    + str(item.find('tags').text)                   
+    #        all_words = all_words.replace("\n","") + '\r\n'
                    
     # Do NOT give extention file name as .xml, otherwise Anki fails to import
     with open(curDir+"/"+fname+'_extracted.txt', 'w', encoding='utf8') as f:
